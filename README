@@ -1,0 +1,32 @@
+MOODY (Multiple Diff)
+moody è un tool che confronta file generici dello stesso tipo (selezione per estensione)
+in grandi quantità, anche annidati in cartelle, con stesso grado di comprensione.
+È utile per confrontare grandi quantità di file per trovare eventuali duplicati.
+
+Come risultato stampa una tabella a doppia entrata con tutti i confronti, 0 se uguali, 1 se diversi (exit status di diff)
+
+
+
+RICHIEDE.
+make
+un compilatore
+ls
+diff
+
+Per compilare è sufficente "make"
+
+USO
+moody [profondità] [b] [estensione]
+
+PARAMETRI:
+profondità	è il numero di livelli di cartelle di comprensione di file da confrontare, 
+		se non dato è 0,quindi confronta i file nella stessa cartella dell'eseguibile
+
+estensione	estensione dei file da confrontare, se non passato è richiesto durante l'esecuzione,
+		se è '*' confronta tutti i file nella cartella, attualmente non è possibile confrontare
+		solo file senza estensione (solo con '*')
+		NOTA:
+		estensione è sempre l'ultimo parametro
+
+b		bonus, se inserito un qualsiasi carattere tra primo e secondo parametro,
+		stampa tabella con asterischi se uguali
